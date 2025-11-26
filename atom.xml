@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TaoSheng</title>
+  
+  <subtitle>Embedded &amp; Robotics</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2025-11-26T17:03:10.857Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>TaoSheng</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C语言学习</title>
+    <link href="http://example.com/2025/11/27/C%E8%AF%AD%E8%A8%80/"/>
+    <id>http://example.com/2025/11/27/C%E8%AF%AD%E8%A8%80/</id>
+    <published>2025-11-26T16:00:00.000Z</published>
+    <updated>2025-11-26T17:03:10.857Z</updated>
+    
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++基本知识</title>
+    <link href="http://example.com/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
+    <id>http://example.com/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</id>
+    <published>2025-11-26T16:00:00.000Z</published>
+    <updated>2025-11-26T23:50:17.545Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="尚硅谷"><a href="#尚硅谷" class="headerlink" title="尚硅谷"></a>尚硅谷</h1><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><h3 id="1-1-历史等"><a href="#1-1-历史等" class="headerlink" title="1.1 历史等"></a>1.1 历史等</h3><h4 id="1-C语言的特点"><a href="#1-C语言的特点" class="headerlink" title="(1) C语言的特点"></a>(1) C语言的特点</h4><ul><li>贴近硬件</li><li>面向过程：C语言以过程为中心的变成范式</li><li>面向对象：以对象为核心的编程范式</li></ul><h4 id="2-C-特点"><a href="#2-C-特点" class="headerlink" title="(2) C++特点"></a>(2) C++特点</h4><ul><li>C的基础<ul><li>贴近底层，运行速度快</li><li>编译型语言</li><li>静态类型语言</li><li>结构化教学语言</li></ul></li><li>增强半C语言<ul><li>面向对象编程</li><li>面向泛型编程</li><li>功能强大，相对较难掌握</li></ul></li></ul><h4 id="3-编译和解释型语言"><a href="#3-编译和解释型语言" class="headerlink" title="(3) 编译和解释型语言"></a>(3) 编译和解释型语言</h4><ul><li>编译：由编译器把整个源代码翻译成机器码，最终生成二进制文件，一次性提交给计算机 - 代表C、C++</li><li>解释：由解释器将代码逐行解释成机器码，并交给计算机执行 - Python、JavaScrip</li></ul><h4 id="4-C-代码的运行"><a href="#4-C-代码的运行" class="headerlink" title="(4) C++代码的运行"></a>(4) C++代码的运行</h4><ul><li>源代码(.cpp)  &#x3D;编译&#x3D;&gt; 目标代码(.obj) &#x3D;(库文件-&gt;)链接&#x3D;&gt; 可执行代码(.exe)</li></ul><h4 id="5-C-标准"><a href="#5-C-标准" class="headerlink" title="(5) C++标准"></a>(5) C++标准</h4><h4 id="6-C-编译器"><a href="#6-C-编译器" class="headerlink" title="(6) C++编译器"></a>(6) C++编译器</h4><ul><li>Visual Studio</li></ul><h3 id="1-2-基本常识"><a href="#1-2-基本常识" class="headerlink" title="1.2 基本常识"></a>1.2 基本常识</h3><h4 id="1-常识性"><a href="#1-常识性" class="headerlink" title="(1) 常识性"></a>(1) 常识性</h4><ul><li>“#”：预处理，程序运行之前预先要做的事情</li><li>别的文件的函数名直接放在要调用的上边，因为编译器能够找到编译后的函数，只要给返回值和参数类型</li><li>“std”命名空间：存放cout、cin、string、vector等</li><li>“::”：告诉编译器，要用某个特定作用域里边的名字</li></ul><h3 id="1-3拓展-“-”-的作用和使用"><a href="#1-3拓展-“-”-的作用和使用" class="headerlink" title="1.3拓展 “::” 的作用和使用"></a>1.3拓展 “::” 的作用和使用</h3><h4 id="1-3-1-作用域解析运算符-四大核心用途"><a href="#1-3-1-作用域解析运算符-四大核心用途" class="headerlink" title="1.3.1 作用域解析运算符 - 四大核心用途"></a>1.3.1 作用域解析运算符 - 四大核心用途</h4><h5 id="1-访问命名空间内的成员"><a href="#1-访问命名空间内的成员" class="headerlink" title="(1) 访问命名空间内的成员"></a>(1) 访问命名空间内的成员</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::cout;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt;</span><br></pre></td></tr></table></figure><ul><li>告诉编译器，名字在std命名空间内</li><li>可能有许多库都有string的结构</li></ul><h5 id="2-访问类-结构体-枚举的成员"><a href="#2-访问类-结构体-枚举的成员" class="headerlink" title="(2) 访问类&#x2F;结构体&#x2F;枚举的成员"></a>(2) 访问类&#x2F;结构体&#x2F;枚举的成员</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> value;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> A::value =<span class="number">10</span>;   <span class="comment">//定义静态成员</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">A::func</span><span class="params">()</span></span>&#123;...&#125;<span class="comment">//类外定义成员函数</span></span><br></pre></td></tr></table></figure><h5 id="3-访问基类成员-父类成员-在多继承或子类重写函数时特别重要："><a href="#3-访问基类成员-父类成员-在多继承或子类重写函数时特别重要：" class="headerlink" title="(3) 访问基类成员(父类成员) - 在多继承或子类重写函数时特别重要："></a>(3) 访问基类成员(父类成员) - 在多继承或子类重写函数时特别重要：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;Base&quot;</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span> :<span class="keyword">public</span> Base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;Berived&quot;</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">callBase</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Base::<span class="built_in">show</span>();       <span class="comment">//Base::show() 表示“我要用父类的版本，不用子类重写的”。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="4-访问全局作用域-前面单独加"><a href="#4-访问全局作用域-前面单独加" class="headerlink" title="(4) 访问全局作用域 - 前面单独加::"></a>(4) 访问全局作用域 - 前面单独加::</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">::<span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure><ul><li>单独的 :: 代表 全局命名空间（global namespace）。</li><li>用途：避免局部变量、函数名遮蔽全局的同名函数。</li></ul><h5 id="5-的意义"><a href="#5-的意义" class="headerlink" title="(5) ::的意义"></a>(5) ::的意义</h5><ul><li>C++具有复杂性<ul><li>多重命名空间</li><li>多个类拥有同名函数或变量</li><li>多重继承</li><li>局域名与全局名可能冲突</li><li>外部库的名字可能相同</li></ul></li><li>所以指出具体这个名字是从哪来的</li></ul><h2 id="2-变量常量等"><a href="#2-变量常量等" class="headerlink" title="2.变量常量等"></a>2.变量常量等</h2><h3 id="2-1-变量-variable"><a href="#2-1-变量-variable" class="headerlink" title="2.1 变量 - variable"></a>2.1 变量 - variable</h3><h4 id="2-1-1-基本知识"><a href="#2-1-1-基本知识" class="headerlink" title="2.1.1 基本知识"></a>2.1.1 基本知识</h4><h5 id="1-变量四要素"><a href="#1-变量四要素" class="headerlink" title="(1) 变量四要素"></a>(1) 变量四要素</h5><ul><li>类型：int float doouble char bool class等</li><li>名字：变量名需以字幕或下划线开头(不能使用双下划线和单下划线加大写字幕)</li><li>存储周期：自动(auto)、静态(static)、动态(new)</li><li>作用域：全局、局部、类作用域、命名作用域</li></ul><h5 id="2-类型分类体系"><a href="#2-类型分类体系" class="headerlink" title="(2) 类型分类体系"></a>(2) 类型分类体系</h5><ul><li>按基本类型分<ul><li>基本类型：int float fouble char bool</li><li>符合类型：指针、引用、数组、结构体、类、枚举</li></ul></li><li>按存储周期分<ul><li>自动变量(auto)：进入作用域创建，离开作用域销毁</li><li>静态变量(static)：程序开始创建，程序结束销毁(全局生命周期)</li><li>动态变量(new)：</li></ul></li><li>按存储位置<ul><li>栈变量(stack)   局部变量</li><li>堆变量(heap)    new出来</li><li>全局&#x2F;静态区     全局变量、static变量</li></ul></li></ul><h5 id="3-变量初始化"><a href="#3-变量初始化" class="headerlink" title="(3) 变量初始化"></a>(3) 变量初始化</h5><ul><li>直接初始化 - 允许隐式类型转换，会导致意外行为<ul><li>int a(10);</li></ul></li><li>括号初始化 (统一初始化) - 会阻止隐式类型转换，防止精度丢失<ul><li>int b&#x3D;{20};double c{3.14};</li></ul></li><li>复制初始化<ul><li>int d&#x3D;30;</li></ul></li><li>默认初始化<ul><li>int x;</li></ul></li></ul><h3 id="1-4-常量-值不能变的存储单元"><a href="#1-4-常量-值不能变的存储单元" class="headerlink" title="1.4 常量 - 值不能变的存储单元"></a>1.4 常量 - 值不能变的存储单元</h3><h4 id="1-分类"><a href="#1-分类" class="headerlink" title="(1) 分类"></a>(1) 分类</h4><ul><li>字面量常量</li><li>const常量 - 编译期只读变量</li><li>constexpr - 编译期常量<table><thead><tr><th>对比项目</th><th>const</th><th>constexpr</th></tr></thead><tbody><tr><td>必须在编译期确定？</td><td>❌ 不必须</td><td>✔ 必须</td></tr><tr><td>可用于数组大小？</td><td>不一定</td><td>✔ 必须可用</td></tr><tr><td>适合场景</td><td>运行期也可能用</td><td>编译期优化</td></tr></tbody></table></li><li>宏从常量 - 预处理常量<ul><li>#define - 宏定义</li></ul></li></ul><h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><ul><li>const限定符 - <ul><li>const int Zero &#x3D; 0;</li></ul></li></ul><h3 id="1-5-数据类型-四类"><a href="#1-5-数据类型-四类" class="headerlink" title="1.5 数据类型 四类"></a>1.5 数据类型 四类</h3><h4 id="1-5-1-基本类型-Built-in-Types"><a href="#1-5-1-基本类型-Built-in-Types" class="headerlink" title="1.5.1 基本类型 Built-in Types"></a>1.5.1 基本类型 Built-in Types</h4><p><img src="/image/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/1764201014240.png" alt="1764201014240"></p><ul><li><h2 id="bool"><a href="#bool" class="headerlink" title="bool      &gt;&gt;  "></a>bool      &gt;&gt;  </h2></li><li>char      &gt;&gt;  1字节 </li><li>wchar_t   &gt;&gt; </li><li>char16_t&#x2F;32_t  </li><li>int       &gt;&gt;  4字节</li><li>long      &gt;&gt;  4或8字节</li><li>long long &gt;&gt;  8字节</li><li>float     &gt;&gt;  4字节</li><li>double    &gt;&gt;  8字节</li><li>long double   &gt;&gt;</li></ul><h5 id="1-浮点类型"><a href="#1-浮点类型" class="headerlink" title="(1) 浮点类型"></a>(1) 浮点类型</h5><ul><li>double长度不小于float</li><li>提供科学计数法(E表示法)：5.98E24 &#x3D;&#x3D; 598×10^24</li></ul><h4 id="2-复合类型-Compound-Types"><a href="#2-复合类型-Compound-Types" class="headerlink" title="(2) 复合类型(Compound Types)"></a>(2) 复合类型(Compound Types)</h4><ul><li>指针 pointer</li><li>引用 reference</li><li>数组 array</li><li>函数指针</li><li>类 class&#x2F;结构体 struct</li></ul><h4 id="3-用户自定义类型-User-defined-Types"><a href="#3-用户自定义类型-User-defined-Types" class="headerlink" title="(3) 用户自定义类型(User-defined Types)"></a>(3) 用户自定义类型(User-defined Types)</h4><ul><li>struct：纯数据，不带函数<ul><li>struct Point{int x,y;};</li></ul></li><li>枚举 enum：enum Struct{ST_INIT,ST_NORMAL};</li><li>typedef &#x2F; using(类型别名)<ul><li>typedef unsigned char u8;</li><li>using u16 &#x3D; uint16_t;</li></ul></li></ul><h4 id="4-类型修饰符-Type-Modifiers"><a href="#4-类型修饰符-Type-Modifiers" class="headerlink" title="(4) 类型修饰符(Type Modifiers)"></a>(4) 类型修饰符(Type Modifiers)</h4><ul><li>signed有符号(默认)</li><li>unsigned无符号</li><li>const    只读，放 Flash 中</li><li>volatile不优化(用于寄存器、RTOS 共享变量)</li><li>static静态存储&#x2F;内部链接</li><li>extern声明外部变量</li><li>mutableconst 对象中可修改</li><li>auto    自动类型推导</li><li>register基本已过时</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;尚硅谷&quot;&gt;&lt;a href=&quot;#尚硅谷&quot; class=&quot;headerlink&quot; title=&quot;尚硅谷&quot;&gt;&lt;/a&gt;尚硅谷&lt;/h1&gt;&lt;h1 id=&quot;基础篇&quot;&gt;&lt;a href=&quot;#基础篇&quot; class=&quot;headerlink&quot; title=&quot;基础篇&quot;&gt;&lt;/a&gt;基础篇&lt;/h</summary>
+      
+    
+    
+    
+    <category term="cpp" scheme="http://example.com/categories/cpp/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2025/11/26/hello-world/"/>
+    <id>http://example.com/2025/11/26/hello-world/</id>
+    <published>2025-11-26T14:57:09.349Z</published>
+    <updated>2025-11-26T14:57:09.349Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

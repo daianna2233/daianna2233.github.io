@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C++基本知识 | TaoSheng</title><meta name="author" content="TaoSheng"><meta name="copyright" content="TaoSheng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="尚硅谷基础篇1.基础知识1.1 历史等(1) C语言的特点 贴近硬件 面向过程：C语言以过程为中心的变成范式 面向对象：以对象为核心的编程范式  (2) C++特点 C的基础 贴近底层，运行速度快 编译型语言 静态类型语言 结构化教学语言   增强半C语言 面向对象编程 面向泛型编程 功能强大，相对较难掌握    (3) 编译和解释型语言 编译：由编译器把整个源代码翻译成机器码，最终生成二进制文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++基本知识">
+<meta property="og:url" content="http://example.com/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="TaoSheng">
+<meta property="og:description" content="尚硅谷基础篇1.基础知识1.1 历史等(1) C语言的特点 贴近硬件 面向过程：C语言以过程为中心的变成范式 面向对象：以对象为核心的编程范式  (2) C++特点 C的基础 贴近底层，运行速度快 编译型语言 静态类型语言 结构化教学语言   增强半C语言 面向对象编程 面向泛型编程 功能强大，相对较难掌握    (3) 编译和解释型语言 编译：由编译器把整个源代码翻译成机器码，最终生成二进制文件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2025-11-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-26T23:50:17.545Z">
+<meta property="article:author" content="TaoSheng">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C++基本知识",
+  "url": "http://example.com/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/",
+  "image": "http://example.com/img/avatar.png",
+  "datePublished": "2025-11-26T16:00:00.000Z",
+  "dateModified": "2025-11-26T23:50:17.545Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "TaoSheng",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3-b2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++基本知识',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="TaoSheng" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 嵌入式项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/robot-core/"><span> 机器人核心 Robot Core</span></a></li><li><a class="site-page child" href="/categories/power-core/"><span> 功率核心 Power Core</span></a></li><li><a class="site-page child" href="/categories/car-core/"><span> 车控系统 Car Core</span></a></li><li><a class="site-page child" href="/categories/sensor-bus/"><span> 传感器与通信 Sensor-Bus</span></a></li><li><a class="site-page child" href="/categories/mcu-driver/"><span> STM32/GD32 驱动</span></a></li><li><a class="site-page child" href="/categories/freertos/"><span> FreeRTOS 模块</span></a></li><li><a class="site-page child" href="/categories/debug/"><span> 调试工具 Debug</span></a></li><li><a class="site-page child" href="/categories/mcu-driver/"><span> STM32-GD32 驱动</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 嵌入式学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/mcu-basic/"><span> MCU 基础</span></a></li><li><a class="site-page child" href="/categories/embedded-architecture/"><span> 嵌入式架构设计</span></a></li><li><a class="site-page child" href="/categories/rtos-learning/"><span> RTOS 学习</span></a></li><li><a class="site-page child" href="/categories/engineering/"><span> 工程实践（Git/VSCode）</span></a></li><li><a class="site-page child" href="/categories/engineering/"><span> 工程实践（Git-VSCode）</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 工具链 &amp; 构建</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/cmake/"><span> CMake &amp; 构建系统</span></a></li><li><a class="site-page child" href="/categories/compiler/"><span> 编译器与交叉编译(GCC/Clang)</span></a></li><li><a class="site-page child" href="/categories/keil/"><span> Keil / MDK</span></a></li><li><a class="site-page child" href="/categories/vscode/"><span> VSCode 调试与配置</span></a></li><li><a class="site-page child" href="/categories/toolchain/"><span> 其他工具链（CMakeLists 实战等）</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> Linux</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/linux/"><span> Ubuntu &amp; 虚拟机</span></a></li><li><a class="site-page child" href="/categories/shell/"><span> Shell</span></a></li><li><a class="site-page child" href="/categories/linux/"><span> Ubuntu 与虚拟机</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> ROS</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/ros-basic/"><span> ROS 基础</span></a></li><li><a class="site-page child" href="/categories/ros-robot/"><span> ROS 机器人</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/C%E8%AF%AD%E8%A8%80/"><span> C语言</span></a></div><div class="menus_item"><a class="site-page" href="/categories/cpp/"><span> C++</span></a></div><div class="menus_item"><a class="site-page" href="/categories/weekly/"><span> 周报</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于我</span></a></div><div class="menus_item"><span class="site-page group"><span> 工具链与构建</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/cmake/"><span> CMake-构建系统</span></a></li><li><a class="site-page child" href="/categories/compiler/"><span> 编译器与交叉编译</span></a></li><li><a class="site-page child" href="/categories/keil/"><span> Keil-MDK</span></a></li><li><a class="site-page child" href="/categories/vscode/"><span> VSCode 调试与配置</span></a></li><li><a class="site-page child" href="/categories/toolchain/"><span> 其他工具链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/c/"><span> C 语言</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">TaoSheng</span></a><a class="nav-page-title" href="/"><span class="site-name">C++基本知识</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><span> 嵌入式项目</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/robot-core/"><span> 机器人核心 Robot Core</span></a></li><li><a class="site-page child" href="/categories/power-core/"><span> 功率核心 Power Core</span></a></li><li><a class="site-page child" href="/categories/car-core/"><span> 车控系统 Car Core</span></a></li><li><a class="site-page child" href="/categories/sensor-bus/"><span> 传感器与通信 Sensor-Bus</span></a></li><li><a class="site-page child" href="/categories/mcu-driver/"><span> STM32/GD32 驱动</span></a></li><li><a class="site-page child" href="/categories/freertos/"><span> FreeRTOS 模块</span></a></li><li><a class="site-page child" href="/categories/debug/"><span> 调试工具 Debug</span></a></li><li><a class="site-page child" href="/categories/mcu-driver/"><span> STM32-GD32 驱动</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 嵌入式学习</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/mcu-basic/"><span> MCU 基础</span></a></li><li><a class="site-page child" href="/categories/embedded-architecture/"><span> 嵌入式架构设计</span></a></li><li><a class="site-page child" href="/categories/rtos-learning/"><span> RTOS 学习</span></a></li><li><a class="site-page child" href="/categories/engineering/"><span> 工程实践（Git/VSCode）</span></a></li><li><a class="site-page child" href="/categories/engineering/"><span> 工程实践（Git-VSCode）</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> 工具链 &amp; 构建</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/cmake/"><span> CMake &amp; 构建系统</span></a></li><li><a class="site-page child" href="/categories/compiler/"><span> 编译器与交叉编译(GCC/Clang)</span></a></li><li><a class="site-page child" href="/categories/keil/"><span> Keil / MDK</span></a></li><li><a class="site-page child" href="/categories/vscode/"><span> VSCode 调试与配置</span></a></li><li><a class="site-page child" href="/categories/toolchain/"><span> 其他工具链（CMakeLists 实战等）</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> Linux</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/linux/"><span> Ubuntu &amp; 虚拟机</span></a></li><li><a class="site-page child" href="/categories/shell/"><span> Shell</span></a></li><li><a class="site-page child" href="/categories/linux/"><span> Ubuntu 与虚拟机</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><span> ROS</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/ros-basic/"><span> ROS 基础</span></a></li><li><a class="site-page child" href="/categories/ros-robot/"><span> ROS 机器人</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/C%E8%AF%AD%E8%A8%80/"><span> C语言</span></a></div><div class="menus_item"><a class="site-page" href="/categories/cpp/"><span> C++</span></a></div><div class="menus_item"><a class="site-page" href="/categories/weekly/"><span> 周报</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于我</span></a></div><div class="menus_item"><span class="site-page group"><span> 工具链与构建</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/cmake/"><span> CMake-构建系统</span></a></li><li><a class="site-page child" href="/categories/compiler/"><span> 编译器与交叉编译</span></a></li><li><a class="site-page child" href="/categories/keil/"><span> Keil-MDK</span></a></li><li><a class="site-page child" href="/categories/vscode/"><span> VSCode 调试与配置</span></a></li><li><a class="site-page child" href="/categories/toolchain/"><span> 其他工具链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/c/"><span> C 语言</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">C++基本知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-11-26T16:00:00.000Z" title="发表于 2025-11-27 00:00:00">2025-11-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-11-26T23:50:17.545Z" title="更新于 2025-11-27 07:50:17">2025-11-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/cpp/">cpp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="尚硅谷"><a href="#尚硅谷" class="headerlink" title="尚硅谷"></a>尚硅谷</h1><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><h3 id="1-1-历史等"><a href="#1-1-历史等" class="headerlink" title="1.1 历史等"></a>1.1 历史等</h3><h4 id="1-C语言的特点"><a href="#1-C语言的特点" class="headerlink" title="(1) C语言的特点"></a>(1) C语言的特点</h4><ul>
+<li>贴近硬件</li>
+<li>面向过程：C语言以过程为中心的变成范式</li>
+<li>面向对象：以对象为核心的编程范式</li>
+</ul>
+<h4 id="2-C-特点"><a href="#2-C-特点" class="headerlink" title="(2) C++特点"></a>(2) C++特点</h4><ul>
+<li>C的基础<ul>
+<li>贴近底层，运行速度快</li>
+<li>编译型语言</li>
+<li>静态类型语言</li>
+<li>结构化教学语言</li>
+</ul>
+</li>
+<li>增强半C语言<ul>
+<li>面向对象编程</li>
+<li>面向泛型编程</li>
+<li>功能强大，相对较难掌握</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-编译和解释型语言"><a href="#3-编译和解释型语言" class="headerlink" title="(3) 编译和解释型语言"></a>(3) 编译和解释型语言</h4><ul>
+<li>编译：由编译器把整个源代码翻译成机器码，最终生成二进制文件，一次性提交给计算机 - 代表C、C++</li>
+<li>解释：由解释器将代码逐行解释成机器码，并交给计算机执行 - Python、JavaScrip</li>
+</ul>
+<h4 id="4-C-代码的运行"><a href="#4-C-代码的运行" class="headerlink" title="(4) C++代码的运行"></a>(4) C++代码的运行</h4><ul>
+<li>源代码(.cpp)  &#x3D;编译&#x3D;&gt; 目标代码(.obj) &#x3D;(库文件-&gt;)链接&#x3D;&gt; 可执行代码(.exe)</li>
+</ul>
+<h4 id="5-C-标准"><a href="#5-C-标准" class="headerlink" title="(5) C++标准"></a>(5) C++标准</h4><h4 id="6-C-编译器"><a href="#6-C-编译器" class="headerlink" title="(6) C++编译器"></a>(6) C++编译器</h4><ul>
+<li>Visual Studio</li>
+</ul>
+<h3 id="1-2-基本常识"><a href="#1-2-基本常识" class="headerlink" title="1.2 基本常识"></a>1.2 基本常识</h3><h4 id="1-常识性"><a href="#1-常识性" class="headerlink" title="(1) 常识性"></a>(1) 常识性</h4><ul>
+<li>“#”：预处理，程序运行之前预先要做的事情</li>
+<li>别的文件的函数名直接放在要调用的上边，因为编译器能够找到编译后的函数，只要给返回值和参数类型</li>
+<li>“std”命名空间：存放cout、cin、string、vector等</li>
+<li>“::”：告诉编译器，要用某个特定作用域里边的名字</li>
+</ul>
+<h3 id="1-3拓展-“-”-的作用和使用"><a href="#1-3拓展-“-”-的作用和使用" class="headerlink" title="1.3拓展 “::” 的作用和使用"></a>1.3拓展 “::” 的作用和使用</h3><h4 id="1-3-1-作用域解析运算符-四大核心用途"><a href="#1-3-1-作用域解析运算符-四大核心用途" class="headerlink" title="1.3.1 作用域解析运算符 - 四大核心用途"></a>1.3.1 作用域解析运算符 - 四大核心用途</h4><h5 id="1-访问命名空间内的成员"><a href="#1-访问命名空间内的成员" class="headerlink" title="(1) 访问命名空间内的成员"></a>(1) 访问命名空间内的成员</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::cout;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>告诉编译器，名字在std命名空间内</li>
+<li>可能有许多库都有string的结构</li>
+</ul>
+<h5 id="2-访问类-结构体-枚举的成员"><a href="#2-访问类-结构体-枚举的成员" class="headerlink" title="(2) 访问类&#x2F;结构体&#x2F;枚举的成员"></a>(2) 访问类&#x2F;结构体&#x2F;枚举的成员</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> value;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> A::value =<span class="number">10</span>;   <span class="comment">//定义静态成员</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">A::func</span><span class="params">()</span></span>&#123;...&#125;<span class="comment">//类外定义成员函数</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-访问基类成员-父类成员-在多继承或子类重写函数时特别重要："><a href="#3-访问基类成员-父类成员-在多继承或子类重写函数时特别重要：" class="headerlink" title="(3) 访问基类成员(父类成员) - 在多继承或子类重写函数时特别重要："></a>(3) 访问基类成员(父类成员) - 在多继承或子类重写函数时特别重要：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;Base&quot;</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span> :<span class="keyword">public</span> Base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;Berived&quot;</span>;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">callBase</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Base::<span class="built_in">show</span>();       <span class="comment">//Base::show() 表示“我要用父类的版本，不用子类重写的”。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-访问全局作用域-前面单独加"><a href="#4-访问全局作用域-前面单独加" class="headerlink" title="(4) 访问全局作用域 - 前面单独加::"></a>(4) 访问全局作用域 - 前面单独加::</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">::<span class="built_in">printf</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>单独的 :: 代表 全局命名空间（global namespace）。</li>
+<li>用途：避免局部变量、函数名遮蔽全局的同名函数。</li>
+</ul>
+<h5 id="5-的意义"><a href="#5-的意义" class="headerlink" title="(5) ::的意义"></a>(5) ::的意义</h5><ul>
+<li>C++具有复杂性<ul>
+<li>多重命名空间</li>
+<li>多个类拥有同名函数或变量</li>
+<li>多重继承</li>
+<li>局域名与全局名可能冲突</li>
+<li>外部库的名字可能相同</li>
+</ul>
+</li>
+<li>所以指出具体这个名字是从哪来的</li>
+</ul>
+<h2 id="2-变量常量等"><a href="#2-变量常量等" class="headerlink" title="2.变量常量等"></a>2.变量常量等</h2><h3 id="2-1-变量-variable"><a href="#2-1-变量-variable" class="headerlink" title="2.1 变量 - variable"></a>2.1 变量 - variable</h3><h4 id="2-1-1-基本知识"><a href="#2-1-1-基本知识" class="headerlink" title="2.1.1 基本知识"></a>2.1.1 基本知识</h4><h5 id="1-变量四要素"><a href="#1-变量四要素" class="headerlink" title="(1) 变量四要素"></a>(1) 变量四要素</h5><ul>
+<li>类型：int float doouble char bool class等</li>
+<li>名字：变量名需以字幕或下划线开头(不能使用双下划线和单下划线加大写字幕)</li>
+<li>存储周期：自动(auto)、静态(static)、动态(new)</li>
+<li>作用域：全局、局部、类作用域、命名作用域</li>
+</ul>
+<h5 id="2-类型分类体系"><a href="#2-类型分类体系" class="headerlink" title="(2) 类型分类体系"></a>(2) 类型分类体系</h5><ul>
+<li>按基本类型分<ul>
+<li>基本类型：int float fouble char bool</li>
+<li>符合类型：指针、引用、数组、结构体、类、枚举</li>
+</ul>
+</li>
+<li>按存储周期分<ul>
+<li>自动变量(auto)：进入作用域创建，离开作用域销毁</li>
+<li>静态变量(static)：程序开始创建，程序结束销毁(全局生命周期)</li>
+<li>动态变量(new)：</li>
+</ul>
+</li>
+<li>按存储位置<ul>
+<li>栈变量(stack)   局部变量</li>
+<li>堆变量(heap)    new出来</li>
+<li>全局&#x2F;静态区     全局变量、static变量</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-变量初始化"><a href="#3-变量初始化" class="headerlink" title="(3) 变量初始化"></a>(3) 变量初始化</h5><ul>
+<li>直接初始化 - 允许隐式类型转换，会导致意外行为<ul>
+<li>int a(10);</li>
+</ul>
+</li>
+<li>括号初始化 (统一初始化) - 会阻止隐式类型转换，防止精度丢失<ul>
+<li>int b&#x3D;{20};double c{3.14};</li>
+</ul>
+</li>
+<li>复制初始化<ul>
+<li>int d&#x3D;30;</li>
+</ul>
+</li>
+<li>默认初始化<ul>
+<li>int x;</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-常量-值不能变的存储单元"><a href="#1-4-常量-值不能变的存储单元" class="headerlink" title="1.4 常量 - 值不能变的存储单元"></a>1.4 常量 - 值不能变的存储单元</h3><h4 id="1-分类"><a href="#1-分类" class="headerlink" title="(1) 分类"></a>(1) 分类</h4><ul>
+<li>字面量常量</li>
+<li>const常量 - 编译期只读变量</li>
+<li>constexpr - 编译期常量<table>
+<thead>
+<tr>
+<th>对比项目</th>
+<th>const</th>
+<th>constexpr</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>必须在编译期确定？</td>
+<td>❌ 不必须</td>
+<td>✔ 必须</td>
+</tr>
+<tr>
+<td>可用于数组大小？</td>
+<td>不一定</td>
+<td>✔ 必须可用</td>
+</tr>
+<tr>
+<td>适合场景</td>
+<td>运行期也可能用</td>
+<td>编译期优化</td>
+</tr>
+</tbody></table>
+</li>
+<li>宏从常量 - 预处理常量<ul>
+<li>#define - 宏定义</li>
+</ul>
+</li>
+</ul>
+<h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><ul>
+<li>const限定符 - <ul>
+<li>const int Zero &#x3D; 0;</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5-数据类型-四类"><a href="#1-5-数据类型-四类" class="headerlink" title="1.5 数据类型 四类"></a>1.5 数据类型 四类</h3><h4 id="1-5-1-基本类型-Built-in-Types"><a href="#1-5-1-基本类型-Built-in-Types" class="headerlink" title="1.5.1 基本类型 Built-in Types"></a>1.5.1 基本类型 Built-in Types</h4><p><img src="/image/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/1764201014240.png" alt="1764201014240"></p>
+<ul>
+<li><h2 id="bool"><a href="#bool" class="headerlink" title="bool      &gt;&gt;  "></a>bool      &gt;&gt;  </h2></li>
+<li>char      &gt;&gt;  1字节 </li>
+<li>wchar_t   &gt;&gt; </li>
+<li>char16_t&#x2F;32_t  </li>
+<li>int       &gt;&gt;  4字节</li>
+<li>long      &gt;&gt;  4或8字节</li>
+<li>long long &gt;&gt;  8字节</li>
+<li>float     &gt;&gt;  4字节</li>
+<li>double    &gt;&gt;  8字节</li>
+<li>long double   &gt;&gt;</li>
+</ul>
+<h5 id="1-浮点类型"><a href="#1-浮点类型" class="headerlink" title="(1) 浮点类型"></a>(1) 浮点类型</h5><ul>
+<li>double长度不小于float</li>
+<li>提供科学计数法(E表示法)：5.98E24 &#x3D;&#x3D; 598×10^24</li>
+</ul>
+<h4 id="2-复合类型-Compound-Types"><a href="#2-复合类型-Compound-Types" class="headerlink" title="(2) 复合类型(Compound Types)"></a>(2) 复合类型(Compound Types)</h4><ul>
+<li>指针 pointer</li>
+<li>引用 reference</li>
+<li>数组 array</li>
+<li>函数指针</li>
+<li>类 class&#x2F;结构体 struct</li>
+</ul>
+<h4 id="3-用户自定义类型-User-defined-Types"><a href="#3-用户自定义类型-User-defined-Types" class="headerlink" title="(3) 用户自定义类型(User-defined Types)"></a>(3) 用户自定义类型(User-defined Types)</h4><ul>
+<li>struct：纯数据，不带函数<ul>
+<li>struct Point{int x,y;};</li>
+</ul>
+</li>
+<li>枚举 enum：enum Struct{ST_INIT,ST_NORMAL};</li>
+<li>typedef &#x2F; using(类型别名)<ul>
+<li>typedef unsigned char u8;</li>
+<li>using u16 &#x3D; uint16_t;</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-类型修饰符-Type-Modifiers"><a href="#4-类型修饰符-Type-Modifiers" class="headerlink" title="(4) 类型修饰符(Type Modifiers)"></a>(4) 类型修饰符(Type Modifiers)</h4><ul>
+<li>signed	有符号(默认)</li>
+<li>unsigned	无符号</li>
+<li>const	    只读，放 Flash 中</li>
+<li>volatile	不优化(用于寄存器、RTOS 共享变量)</li>
+<li>static	静态存储&#x2F;内部链接</li>
+<li>extern	声明外部变量</li>
+<li>mutable	const 对象中可修改</li>
+<li>auto	    自动类型推导</li>
+<li>register	基本已过时</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">TaoSheng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">http://example.com/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">TaoSheng</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width no-desc" href="/2025/11/27/C%E8%AF%AD%E8%A8%80/" title="C语言学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">C语言学习</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">TaoSheng</div><div class="author-info-description">My embedded development blog</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%9A%E7%A1%85%E8%B0%B7"><span class="toc-number">1.</span> <span class="toc-text">尚硅谷</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%AF%87"><span class="toc-number">2.</span> <span class="toc-text">基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">2.1.</span> <span class="toc-text">1.基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%8E%86%E5%8F%B2%E7%AD%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 历史等</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-C%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">(1) C语言的特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-C-%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">(2) C++特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BC%96%E8%AF%91%E5%92%8C%E8%A7%A3%E9%87%8A%E5%9E%8B%E8%AF%AD%E8%A8%80"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">(3) 编译和解释型语言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-C-%E4%BB%A3%E7%A0%81%E7%9A%84%E8%BF%90%E8%A1%8C"><span class="toc-number">2.1.1.4.</span> <span class="toc-text">(4) C++代码的运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-C-%E6%A0%87%E5%87%86"><span class="toc-number">2.1.1.5.</span> <span class="toc-text">(5) C++标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-C-%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">2.1.1.6.</span> <span class="toc-text">(6) C++编译器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%9F%BA%E6%9C%AC%E5%B8%B8%E8%AF%86"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2 基本常识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E8%AF%86%E6%80%A7"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">(1) 常识性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E6%8B%93%E5%B1%95-%E2%80%9C-%E2%80%9D-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.3拓展 “::” 的作用和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-%E4%BD%9C%E7%94%A8%E5%9F%9F%E8%A7%A3%E6%9E%90%E8%BF%90%E7%AE%97%E7%AC%A6-%E5%9B%9B%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%94%A8%E9%80%94"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">1.3.1 作用域解析运算符 - 四大核心用途</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%AE%BF%E9%97%AE%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%86%85%E7%9A%84%E6%88%90%E5%91%98"><span class="toc-number">2.1.3.1.1.</span> <span class="toc-text">(1) 访问命名空间内的成员</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%AE%BF%E9%97%AE%E7%B1%BB-%E7%BB%93%E6%9E%84%E4%BD%93-%E6%9E%9A%E4%B8%BE%E7%9A%84%E6%88%90%E5%91%98"><span class="toc-number">2.1.3.1.2.</span> <span class="toc-text">(2) 访问类&#x2F;结构体&#x2F;枚举的成员</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%AE%BF%E9%97%AE%E5%9F%BA%E7%B1%BB%E6%88%90%E5%91%98-%E7%88%B6%E7%B1%BB%E6%88%90%E5%91%98-%E5%9C%A8%E5%A4%9A%E7%BB%A7%E6%89%BF%E6%88%96%E5%AD%90%E7%B1%BB%E9%87%8D%E5%86%99%E5%87%BD%E6%95%B0%E6%97%B6%E7%89%B9%E5%88%AB%E9%87%8D%E8%A6%81%EF%BC%9A"><span class="toc-number">2.1.3.1.3.</span> <span class="toc-text">(3) 访问基类成员(父类成员) - 在多继承或子类重写函数时特别重要：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%AE%BF%E9%97%AE%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F-%E5%89%8D%E9%9D%A2%E5%8D%95%E7%8B%AC%E5%8A%A0"><span class="toc-number">2.1.3.1.4.</span> <span class="toc-text">(4) 访问全局作用域 - 前面单独加::</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">2.1.3.1.5.</span> <span class="toc-text">(5) ::的意义</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8F%98%E9%87%8F%E5%B8%B8%E9%87%8F%E7%AD%89"><span class="toc-number">2.2.</span> <span class="toc-text">2.变量常量等</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%8F%98%E9%87%8F-variable"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 变量 - variable</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">2.1.1 基本知识</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F%E5%9B%9B%E8%A6%81%E7%B4%A0"><span class="toc-number">2.2.1.1.1.</span> <span class="toc-text">(1) 变量四要素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%B1%BB%E5%9E%8B%E5%88%86%E7%B1%BB%E4%BD%93%E7%B3%BB"><span class="toc-number">2.2.1.1.2.</span> <span class="toc-text">(2) 类型分类体系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%8F%98%E9%87%8F%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.2.1.1.3.</span> <span class="toc-text">(3) 变量初始化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%B8%B8%E9%87%8F-%E5%80%BC%E4%B8%8D%E8%83%BD%E5%8F%98%E7%9A%84%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83"><span class="toc-number">2.2.2.</span> <span class="toc-text">1.4 常量 - 值不能变的存储单元</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">(1) 分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">(2)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%9B%9B%E7%B1%BB"><span class="toc-number">2.2.3.</span> <span class="toc-text">1.5 数据类型 四类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B-Built-in-Types"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">1.5.1 基本类型 Built-in Types</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bool"><span class="toc-number">2.3.</span> <span class="toc-text">bool      &gt;&gt;  </span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.1.</span> <span class="toc-text">(1) 浮点类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B-Compound-Types"><span class="toc-number">2.3.2.</span> <span class="toc-text">(2) 复合类型(Compound Types)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B-User-defined-Types"><span class="toc-number">2.3.3.</span> <span class="toc-text">(3) 用户自定义类型(User-defined Types)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%B1%BB%E5%9E%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6-Type-Modifiers"><span class="toc-number">2.3.4.</span> <span class="toc-text">(4) 类型修饰符(Type Modifiers)</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/27/C%E8%AF%AD%E8%A8%80/" title="C语言学习">C语言学习</a><time datetime="2025-11-26T16:00:00.000Z" title="发表于 2025-11-27 00:00:00">2025-11-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/27/C++%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" title="C++基本知识">C++基本知识</a><time datetime="2025-11-26T16:00:00.000Z" title="发表于 2025-11-27 00:00:00">2025-11-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/26/hello-world/" title="Hello World">Hello World</a><time datetime="2025-11-26T14:57:09.349Z" title="发表于 2025-11-26 22:57:09">2025-11-26</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By TaoSheng</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3-b2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3-b2"></script><script src="/js/main.js?v=5.5.3-b2"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
