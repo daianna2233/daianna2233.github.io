@@ -1,7 +1,8 @@
 // ==== 简易粒子背景动画 ====
 const canvas = document.createElement('canvas');
-canvas.id = "bg-animation";
-document.body.appendChild(canvas);
+canvas.id = 'bg-animation';
+document.body.insertBefore(canvas, document.body.firstChild);  // 插入到body最前面
+
 
 const ctx = canvas.getContext("2d");
 let w, h, particles;
